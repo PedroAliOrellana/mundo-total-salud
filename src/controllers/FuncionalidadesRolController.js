@@ -1,7 +1,5 @@
 const FuncionalidadRol = require('../models/RolFuncionalidad');
 const Funcionalidad = require('../models/Funcionalidad');
-const upload = require('../config/upload');
-const uploader = require('../models/uploader');
 const helpers = require('./helpers');
 const { array } = require('../config/upload');
 const rolFuncionalidad = require('../models/RolFuncionalidad');
