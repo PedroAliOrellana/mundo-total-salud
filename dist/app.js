@@ -1,10 +1,10 @@
 "use strict";
-
+/* 
 var Users = require('./models/User');
 
 var Funcionalidad = require('./models/funcionalidad');
 
-var Afiliado = require('./models/Afiliado');
+var Afiliado = require('./models/Afiliado'); */
 
 var express = require('express');
 
@@ -112,11 +112,11 @@ app.use('/funcionalidades', funcionalidades);
 app.use('/funcionalidadesRol', funcionalidadesRol);
 app.use('/applications', applications);
 app.use('/solicitudesAfiliacion', solicitudesA);
-app.get('/demo', function (req, res) {
+/* app.get('/demo', function (req, res) {
   Funcionalidad.remove({}).then(function (r) {
     return res.json(r);
   });
-}); // catch 404 and forward to error handler
+}); */ // catch 404 and forward to error handler
 
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
