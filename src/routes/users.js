@@ -3,7 +3,7 @@ let router = require('express-promise-router')();
 
 const usersController = require('../controllers/UsersController');
 
-const sessionsController = require('../controllers/sessionsController');
+const sessionsController = require('../controllers/SessionsController');
 
 router.route('/')
 
