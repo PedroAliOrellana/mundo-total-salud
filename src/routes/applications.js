@@ -3,7 +3,7 @@ let router = express.Router();
 
 const authenticateAdmin = require('../middlewares/authenticateAdmin');
 const findUser = require('../middlewares/findUser');
-const applicationsController = require('../controllers/applicationsController');
+const applicationsController = require('../controllers/ApplicationsController');
 
 const jwtMiddleware = require('express-jwt');
 const secrets = require('../config/secrets');
