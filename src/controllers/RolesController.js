@@ -1,6 +1,5 @@
 const Rol = require('../models/Rol');
 const upload = require('../config/upload');
-const uploader = require('../models/uploader');
 const helpers = require('./helpers');
 
 const validParams = ['nombre','descripcion','fecha_creacion','estatus'];
