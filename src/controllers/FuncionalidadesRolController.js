@@ -1,10 +1,10 @@
 const FuncionalidadRol = require('../models/RolFuncionalidad');
-const Funcionalidad = require('../models/funcionalidad');
+const Funcionalidad = require('../models/Funcionalidad');
 const upload = require('../config/upload');
 const uploader = require('../models/uploader');
 const helpers = require('./helpers');
 const { array } = require('../config/upload');
-const rolFuncionalidad = require('../models/rolFuncionalidad');
+const rolFuncionalidad = require('../models/RolFuncionalidad');
 
 const validParams = ['id_rol','funcionalidad','fecha_creacion','estatus'];
 
