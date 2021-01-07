@@ -1,6 +1,5 @@
 const Solicitud = require('../models/SolicitudAfiliacion');
 const upload = require('../config/upload');
-const uploader = require('../models/uploader');
 const helpers = require('./helpers');
 
 const validParams = ['cedula','nombre','apellido','correo','telefono','fecha_creacion',
