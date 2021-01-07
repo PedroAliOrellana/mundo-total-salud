@@ -1,5 +1,5 @@
 const Users = require('./models/User');
-const Funcionalidad = require('./models/funcionalidad');
+const Funcionalidad = require('./models/Funcionalidad');
 const Afiliado = require('./models/Afiliado');
 
 var express = require('express');
