@@ -1,0 +1,96 @@
+
+const Pregunta = require('../models/Pregunta');
+const helpers = require('./helpers');
+
+const validParams = ['pregunta','respuesta1','respuesta2','respuesta3','respuesta4','opcioncorrecta','status','tipo','ronda'];
+
+function find(req,res,next){
+  Pregunta.findOne({nro:req.params.id})
+  .then(pregunta=>{
+    req.pregunta = pregunta;
+    req.mainObj = pregunta;
+    next();
+  }).catch(err=>{
+    next(err);
+  });
+}
+
+
+function index(req,res){
+  //Todos los lugares
+  Pregunta.find().where({status: 1}).sort({nro:'-1'})
+  .then(docs=>{
+    res.json(docs);
+  }).catch(err=>{
+    console.log(err);
+    res.json(err);
+  })
+}
+
+function buscarInactiva(req,res){
+  //Todos los lugares
+  Pregunta.find().where({status: 3}).sort({nro: '1'})
+  .then(docs=>{
+    res.json(docs);
+  }).catch(err=>{
+    console.log(err);
+    res.json(err);
+  })
+}
+
+function activarPregunta(req,res){
+  //buscar pregunta para conquis
+  Pregunta.findOne({status: 2})
+  .then(doc=>{
+    res.json(doc);
+  }).catch(err=>{
+    console.log(err);
+    res.json(err);
+  })
+}
+
+function create(req,res){
+  //Crear nuevos lugares
+  const params = helpers.buildParams(validParams,req.body);
+  Pregunta.create(params).then(doc=>{
+    req.pregunta = doc;
+    res.json(doc);
+  }).catch(err=>{
+    res.json(err);
+  });
+}
+
+
+function show(req,res){
+  //Busqueda individual
+  res.json(req.pregunta);
+}
+
+function update(req,res){
+  //Actualizar un recurso
+
+  const params = helpers.buildParams(validParams,req.body);
+
+  req.pregunta = Object.assign(req.pregunta,params);
+
+  req.pregunta.save().then(doc=>{
+    res.json(doc);
+  }).catch(err=>{
+    console.log(err);
+    res.json(err);
+  });
+}
+
+function destroy(req,res){
+  //Eliminar recursos
+  req.pregunta.remove().then(doc=>{
+    res.json({})
+  }).catch(err=>{
+    console.log(err);
+    res.json(err);
+  });
+}
+
+
+
+module.exports = {index,show,create,destroy,update,find,activarPregunta,buscarInactiva};
