@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 const jwtMiddleware = require('express-jwt');
 
 const roles = require('./routes/roles');
-const solicitudesA = require('./routes/SolicitudesAfiliacion');
+const solicitudesA = require('./routes/solicitudesAfiliacion');
 const bancosSuscriptor = require('./routes/bancosSuscriptor');
 const conyugues = require('./routes/conyugues');
 const suscriptores = require('./routes/suscriptores');
