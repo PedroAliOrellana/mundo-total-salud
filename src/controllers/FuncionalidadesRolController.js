@@ -1,4 +1,4 @@
-const FuncionalidadRol = require('../models/rolFuncionalidad');
+const FuncionalidadRol = require('../models/RolFuncionalidad');
 const Funcionalidad = require('../models/funcionalidad');
 const upload = require('../config/upload');
 const uploader = require('../models/uploader');
