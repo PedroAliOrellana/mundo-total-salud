@@ -2,7 +2,7 @@ const express = require('express');
 
 let router = require('express-promise-router')();
 
-const conyugueController = require('../controllers/conyugueController');
+const conyugueController = require('../controllers/ConyugueController');
 
 const authenticateOwner = require('../middlewares/authenticateOwner');
 
