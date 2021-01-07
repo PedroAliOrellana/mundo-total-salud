@@ -9,12 +9,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 const jwtMiddleware = require('express-jwt');
 
-const places = require('./routes/places');
-const rondas = require('./routes/rondas');
-const puntuaciones = require('./routes/puntuaciones');
 const roles = require('./routes/roles');
-const preguntas = require('./routes/preguntas');
-const preguntaUsuario = require('./routes/preguntaUsuario');
 const solicitudesA = require('./routes/SolicitudesAfiliacion');
 const bancosSuscriptor = require('./routes/bancosSuscriptor');
 const conyugues = require('./routes/conyugues');
@@ -23,11 +18,8 @@ const afiliados = require('./routes/afiliados');
 const herederos = require('./routes/herederos');
 const users = require('./routes/users');
 const sessions = require('./routes/sessions');
-const favorites = require('./routes/favorites');
 const funcionalidadesRol = require('./routes/funcionalidadesRol');
 const funcionalidades = require('./routes/funcionalidades');
-const visits = require('./routes/visits');
-const visitsPlaces = require('./routes/visitsPlaces');
 const applications = require('./routes/applications');
 
 const findAppBySecret = require('./middlewares/findAppBySecret');
@@ -60,22 +52,14 @@ app.use(
     .unless({path: ['/solicitudesAfiliacion','/users','/sessions'], method: ['GET','OPTIONS']})
 )
 
-app.use('/places',places);
-app.use('/rondas',rondas);
-app.use('/puntuaciones',puntuaciones);
-app.use('/preguntaUsuario',preguntaUsuario);
-app.use('/preguntas',preguntas);
 app.use('/afiliados',afiliados);
 app.use('/bancosSuscriptor',bancosSuscriptor);
-app.use('/places',visitsPlaces);
 app.use('/herederos',herederos);
 app.use('/suscriptores',suscriptores);
 app.use('/users',users);
 app.use('/sessions',sessions);
 app.use('/conyugues',conyugues);
-app.use('/favorites',favorites);
 app.use('/roles',roles);
-app.use('/visits',visits);
 app.use('/funcionalidades',funcionalidades);
 app.use('/funcionalidadesRol',funcionalidadesRol);
 app.use('/applications',applications)
